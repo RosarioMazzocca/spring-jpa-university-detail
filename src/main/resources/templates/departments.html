@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="resources :: head"></div>
+	<title>Departments</title>
+</head>
+<body>
+	<div class="container">
+	<h1>Departments</h1>
+	<hr/>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nome</th>
+				<th scope="col">Indirizzo</th>
+				<th scope="col">Telefono</th>
+				<th scope="col">Email</th>
+				<th scope="col">Sito</th>
+				<th scope="col">Rettore</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="department : ${departments}">
+				<td th:text="${department.name}"></td>		
+				<td th:text="${department.address}"></td>
+				<td th:text="${department.phone}"></td>
+				<td th:text="${department.email}"></td>
+				<td th:text="${department.website}"></td>
+				<td th:text="${department.headOfDepartment}"></td>
+				<td><a class="btn btn-primary" th:href="@{|/department/${department.id}|}">Corsi di laurea</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div th:replace="resources :: scripts"></div>
+	</div>
+</body>
+</html>

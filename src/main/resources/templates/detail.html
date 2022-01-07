@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <div th:replace="resources :: head"></div>
+        <title>Degrees</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 th:text="${university.name}"></h1>
+            <hr/>
+    
+            <dl class="row">
+            <dt class="col-3">Corsi di Laurea: </dt>
+            <dd class="col-9">
+                <ul class="list-unstyled">
+                    <li th:each="degree : ${degrees}" th:text="${degree.name}"></li>
+                </ul>
+            </dd>
+            <div>
+            <a class="btn btn-primary" th:href="@{/}">Ritorna alla Home</a>
+        </div>
+        </dl>
+        </div>
+
+    <div th:replace="resources :: scripts"></div>
+    </body>
+</html>
